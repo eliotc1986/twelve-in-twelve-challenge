@@ -1,0 +1,8 @@
+<% @posts.each do |post| %>
+  <article>
+    <h1 class="title"><%= link_to post.title, post %></h1>
+    <p class="date">
+      Submitted <%= time_ago_in_words(post.created_at) %> ago
+    </p>
+  </article>
+<% end %>
