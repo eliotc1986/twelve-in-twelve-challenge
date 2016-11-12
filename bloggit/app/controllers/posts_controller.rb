@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = Post.new
   end
 
   def edit
@@ -19,9 +20,9 @@ class PostsController < ApplicationController
     @post.save
 
     if @post.save
-      redirect_to @post, notice: 'Post was successfully updated.'
+      redirect_to @post, notice: 'Your post was successfully added.'
     else
-      redirect_to :back, notice: 'Oops! There was an error! Please try again.'
+      render 'new'
     end
   end
 

@@ -1,0 +1,42 @@
+// Form styles
+
+.form-primary {
+  label {
+    display: block;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea {
+    width: 90%;
+    border: 1px solid #d6dce0;
+    border-radius: .35em;
+    margin-top: 10px;
+    padding: .5em 1em;
+    line-height: 1.75;
+  }
+
+  input[type="text"] {
+    height: 35px;
+  }
+
+  textarea {
+    min-height: 180px;
+  }
+
+  input[type="submit"] {
+    background: transparent;
+    border-radius: 1.5em;
+    border: 1px solid #d6dce0;
+    font-size: 1.1em;
+    margin-left: .5em;
+    outline: none;
+    padding: .5em 1.5em;
+
+    &:hover {
+      border: 1px solid #33acb7;
+      color: #33acb7;
+    }
+  }
+}

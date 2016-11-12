@@ -14,8 +14,8 @@
 
     <%= render partial: "layouts/common/topbar" %>
 
-    <% flash.each do |name, msg | %>
-      <%= content_tag(:div, msg, class: "alert") %>
+    <% flash.each do |type, msg| %>
+      <%= content_tag(:div, msg, class: "alert #{type}") %>
     <% end %>
 
     <%= yield %>

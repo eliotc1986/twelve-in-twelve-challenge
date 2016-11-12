@@ -1,0 +1,24 @@
+// alert styles
+
+.alert {
+  text-align: center;
+  padding: 20px;
+
+  &.success {
+    background-color: lightseagreen;
+    color: #fff;
+  }
+
+  &.notice {
+    background-color: lightcyan;
+  }
+
+  &.warning {
+    background-color: lightgoldenrodyellow;
+  }
+
+  &.danger {
+    background-color: lightcoral;
+    color: #fff;
+  }
+}
