@@ -9,8 +9,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: inherit;
+  color: #33acb7;
   text-decoration: none;
+
+  &.danger {
+    color: lightcoral;
+
+    &:hover {
+      color: lighten(lightcoral, 10%);
+    }
+  }
+
+  &:hover {
+    color: lighten(#33acb7, 15%);
+  }
 }
 
 // Site wrapper
@@ -20,37 +32,45 @@ a {
   .links {
     margin: 2em 0;
   }
+
+  .section {
+    padding: 3em;
+  }
 }
 
-// Top bar header
-.top-bar {
-  background: #f5f7f9;
-  border-bottom: 1px solid #d6dce0;
-  color: #9eafba;
-  padding: 1em 3em;
+// Page wrapper
+.page-wrapper {
+  padding: 3em;
 
-  p {
-    display: inline;
+  .profile-image {
+    width: 300px;
+    float: left;
+    margin-right: 2em;
+    img {
+      width: 100%;
+      border-radius: 0.35em;
+    }
   }
 
-  a {
-    color: #9eafba;
-    text-decoration: none;
-  }
+  .content {
+    h1 {
+      font-weight: 500;
+    }
 
-  .top-bar-right {
-    float: right;
-    margin-top: -1px;
+    p {
+      font-size: 1.1em;
+      line-height: 1.75;
+    }
 
-    .button {
-      font-size: .8em;
-      margin-left: .5em;
+    a {
+      color: #33acb7;
+      font-weight: 700;
+      text-decoration: none;
     }
   }
 }
 
-// Wrapper for posts
-// Posts index page
+// Wrapper for posts on INDEX Page
 .post-wrapper {
   padding: 3em;
   border-bottom: 1px solid #d6dce0;
@@ -75,6 +95,33 @@ a {
     margin: .5em 0 0;
   }
 }
+
+// Wrapper for post on SHOW page
+.post-content {
+  padding: 1em 3em;
+
+  .post-title {
+    color: #2a2f35;
+    font-size: 2.5em;
+    font-weight: 500;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+
+  .post-body {
+    font-size: 1.1em;
+    line-height: 1.75;
+  }
+
+  .post-details {
+    margin: .5em 0 2em;
+
+    .date {
+      color: #9eafba;
+    }
+  }
+}
+
 
 // Comments wrapper
 .comments-wrapper {
@@ -128,61 +175,5 @@ a {
   input[type="text"],
   textarea {
     width: 50%;
-  }
-}
-
-// Post content
-// Post Show page
-.post-content {
-  padding: 1em 3em;
-
-  .post-title {
-    color: #2a2f35;
-    font-size: 2.5em;
-    font-weight: 500;
-    margin-bottom: 0;
-    text-decoration: none;
-  }
-
-  .post-body {
-    font-size: 1.1em;
-    line-height: 1.75;
-  }
-
-  .post-date {
-    color: #9eafba;
-    margin: .5em 0 2em;
-  }
-}
-
-// Page wrapper
-.page-wrapper {
-  padding: 3em;
-
-  .profile-image {
-    width: 300px;
-    float: left;
-    margin-right: 2em;
-    img {
-      width: 100%;
-      border-radius: 0.35em;
-    }
-  }
-
-  .content {
-    h1 {
-      font-weight: 500;
-    }
-
-    p {
-      font-size: 1.1em;
-      line-height: 1.75;
-    }
-
-    a {
-      color: #33acb7;
-      font-weight: 700;
-      text-decoration: none;
-    }
   }
 }

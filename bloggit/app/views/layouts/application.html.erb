@@ -11,14 +11,14 @@
   <%= render partial: "layouts/common/sidebar" %>
 
   <div class="site-wrapper">
-
     <%= render partial: "layouts/common/topbar" %>
-
     <% flash.each do |type, msg| %>
       <%= content_tag(:div, msg, class: "alert #{type}") %>
     <% end %>
 
-    <%= yield %>
+    <div class="main-content">
+      <%= yield %>
+    </div>
   </div>
 
 </body>

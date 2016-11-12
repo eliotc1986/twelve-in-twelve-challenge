@@ -1,3 +1,9 @@
+<% if @posts.count < 1 %>
+  <div class="section">
+    <p>It looks like you haven't created any posts. <%= link_to "Click here", new_post_path %> to add one now!</p>
+  </div>
+<% end %>
+
 <% @posts.each do |post| %>
   <div class="post-wrapper">
     <article>
