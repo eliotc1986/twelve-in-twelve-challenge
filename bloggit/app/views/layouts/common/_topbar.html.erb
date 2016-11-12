@@ -1,5 +1,12 @@
 <div class="top-bar">
+  <% if current_page?(root_path) %>
     <p><%= link_to "All Posts", root_path %></p>
+  <% elsif current_page?(about_path) %>
+    <p>About</p>
+  <% else %>
+    <%= link_to "Back to Posts", root_path %>
+  <% end %>
+
   <div class="top-bar-right">
     <%= link_to "New Post", new_post_path, class: "button" %>
     <%= link_to "Logout", new_post_path, class: "button" %>
