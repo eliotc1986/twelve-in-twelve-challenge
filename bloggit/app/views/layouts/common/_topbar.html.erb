@@ -7,8 +7,10 @@
     <%= link_to "Back to Posts", root_path %>
   <% end %>
 
-  <div class="top-bar-right">
-    <%= link_to "New Post", new_post_path, class: "button" %>
-    <%= link_to "Logout", new_post_path, class: "button" %>
-  </div>
+  <% if user_signed_in? %>
+    <div class="top-bar-right">
+      <%= link_to "New Post", new_post_path, class: "button" %>
+      <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "button" %>
+    </div>
+  <% end %>
 </div>

@@ -1,7 +1,12 @@
 <% if @posts.count < 1 %>
   <div class="section">
-    <p>It looks like you haven't created any posts. <%= link_to "Click here", new_post_path %> to add one now!</p>
+    <% if user_signed_in? %>
+      <p>It looks like you haven't created any posts. <%= link_to "Click here", new_post_path %> to add one now!</p>
+    <% else %>
+      <p>It looks like there aren't any posts yet. Please check back again later!</p>
+    <% end %>
   </div>
+
 <% end %>
 
 <% @posts.each do |post| %>

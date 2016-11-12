@@ -1,6 +1,6 @@
 // alert styles
 
-.alert {
+.alert-box {
   text-align: center;
   padding: 20px;
 
@@ -13,7 +13,7 @@
     background-color: lightcyan;
   }
 
-  &.warning {
+  &.alert {
     background-color: lightgoldenrodyellow;
   }
 

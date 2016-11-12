@@ -15,5 +15,7 @@
     <li><a href="#">Wantedly</a></li>
     <li><a href="#">GitHub</a></li>
   </ul>
-  <a href="#" class="sign-in">Login</a>
+  <% if !user_signed_in? %>
+    <%= link_to "Admin Login", new_user_session_path, class: "sign-in" %>
+  <% end %>
 </div>

@@ -17,7 +17,7 @@
 
 $(document).ready(function() {
   setTimeout(function() {
-    $('.alert').slideUp('slow', function() {
+    $('.alert-box').slideUp('slow', function() {
       $(this).remove();
     });
   }, 3000);

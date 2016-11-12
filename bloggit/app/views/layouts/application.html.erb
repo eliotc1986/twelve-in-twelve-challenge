@@ -12,9 +12,7 @@
 
   <div class="site-wrapper">
     <%= render partial: "layouts/common/topbar" %>
-    <% flash.each do |type, msg| %>
-      <%= content_tag(:div, msg, class: "alert #{type}") %>
-    <% end %>
+    <%= render partial: "layouts/common/flash" %>
 
     <div class="main-content">
       <%= yield %>
