@@ -1,0 +1,64 @@
+// Sidebar styles
+
+#sidebar {
+  background: #f5f7f9;
+  border-right: 1px solid #d6dce0;
+  height: 100%;
+  left: 0;
+  padding: 7em 0 0;
+  position: fixed;
+  top: 0;
+  width: 250px;
+
+  .logo {
+    position: absolute;
+    right: 3em;
+    top: 3em;
+    width: 40px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-right: 3em;
+    text-align: right;
+
+    .category {
+      color: #33acb7;
+      font-size: 0.7em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    li {
+      padding: .5em 0;
+
+      a {
+        color: #9eafba;
+        text-decoration: none;
+        transition: all .4s ease;
+
+        &:hover {
+          color: #33acb7;
+        }
+      }
+    }
+
+    .active {
+      a {
+        color: #33acb7;
+      }
+    }
+  }
+
+  .sign-in {
+    color: #9eafba;
+    font-size: .8em;
+    position: absolute;
+    right: 3em;
+    top: 80%;
+  }
+}

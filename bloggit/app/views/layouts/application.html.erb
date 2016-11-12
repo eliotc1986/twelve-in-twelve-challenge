@@ -8,7 +8,18 @@
 </head>
 <body>
 
-<%= yield %>
+  <%= render partial: "layouts/common/sidebar" %>
+
+  <div class="site-wrapper">
+
+    <%= render partial: "layouts/common/topbar" %>
+
+    <% flash.each do |name, msg | %>
+      <%= content_tag(:div, msg, class: "alert") %>
+    <% end %>
+
+    <%= yield %>
+  </div>
 
 </body>
 </html>
