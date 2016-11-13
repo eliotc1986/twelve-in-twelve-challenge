@@ -1,1 +1,21 @@
 // Global styles
+
+$primary-color: #aa4847;
+$light-gray: #eaeaea;
+
+body {
+  background-color: $primary-color;
+}
+
+.review-title {
+  margin: 0 0 10px;
+}
+
+.reviews {
+  border-bottom: 1px solid $light-gray;
+  padding: 15px 0;
+
+  .star-rating {
+    padding-bottom: 8px;
+  }
+}

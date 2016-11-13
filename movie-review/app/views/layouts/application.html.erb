@@ -7,9 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render partial: "layouts/common/flash" %>
+  <%= render partial: "layouts/common/top_nav" %>
 
-  <div class="site-wrapper">
+  <div class="container">
+    <%= render partial: "layouts/common/flash" %>
     <%= yield %>
   </div>
 
