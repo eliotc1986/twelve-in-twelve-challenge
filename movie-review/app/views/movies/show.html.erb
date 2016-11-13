@@ -4,7 +4,7 @@
       <div class="col-md-6">
         <%= image_tag @movie.image.url(:medium) %>
         <div class="star-rating" data-score= <%= @avg_review %> ></div>
-        <em><%#= "#{@reviews.length} reviews" %></em>
+        <em><%= "#{@reviews.length} reviews" %></em>
         <div class="table-responsive">
           <table class="table">
             <tbody>
@@ -30,38 +30,39 @@
               </tr>
             </tbody>
           </table>
-          <%#= link_to "Write a Review", new_movie_review_path(@movie) %>
+          <%= link_to "Write a Review", new_movie_review_path(@movie) %>
         </div>
       </div>
       <div class="col-md-6">
         <h1 class="review-title"><%= @movie.title %></h1>
         <p><%= @movie.description %></p>
 
-        <%# if @reviews.blank? %>
-          <!-- <h3>No reviews just yet, would you like to add the first!</h3> -->
-          <%#= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-danger" %>
-        <%# else %>
-          <%# @reviews.each do |review| %>
-            <!-- <div class="reviews"> -->
-              <!-- <div class="star-rating" data-score= <%#= review.rating %> ></div> -->
-              <!-- <p><%#= review.comment %></p> -->
-            <!-- </div> -->
-          <%# end %>
-        <%# end %>
+        <% if @reviews.blank? %>
+          <h3>No reviews just yet, would you like to add the first!</h3>
+          <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-danger" %>
+        <% else %>
+          <% @reviews.each do |review| %>
+            <div class="reviews">
+              <div class="star-rating" data-score= <%= review.rating %> ></div>
+                <p><%= review.comment %></p>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
 
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
+<%= link_to 'Back', movies_path %> |
+<%= link_to 'Delete', movie_path, :method => :delete, data: { confirm: "Are you sure you want to delete this movie?" }  %>
 
 <script>
     $('.star-rating').raty({
       path: '/assets/',
       readOnly: true,
       score: function() {
-            return $(this).attr('data-score');
+        return $(this).attr('data-score');
     }
   });
 </script>
