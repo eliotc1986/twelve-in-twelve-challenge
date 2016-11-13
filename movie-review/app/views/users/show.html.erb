@@ -1,0 +1,6 @@
+<h1><%= @user.username %></h1>
+<%= image_tag @user.profile_image.url(:medium) %>
+
+<% if @user.id === current_user.id %>
+<%= link_to "Edit Account", edit_user_registration_path %>
+<% end %>

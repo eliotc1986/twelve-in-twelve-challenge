@@ -7,4 +7,6 @@ MovieReview::Application.routes.draw do
     resources :reviews, except: [:show, :index]
   end
 
+  resources :users, only: [:show, :index]
+
 end
