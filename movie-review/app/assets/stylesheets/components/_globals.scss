@@ -1,10 +1,8 @@
 // Global styles
 
-$primary-color: #aa4847;
-$light-gray: #eaeaea;
-
 body {
-  background-color: $primary-color;
+  background-color: $medium-gray;
+  font-family: $global-font-family-sans-serif;
 }
 
 .navbar {
@@ -26,4 +24,9 @@ body {
   .star-rating {
     padding-bottom: 8px;
   }
+}
+
+// Buttons
+.btn-full {
+  width: 100%;
 }

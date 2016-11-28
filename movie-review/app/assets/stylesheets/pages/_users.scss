@@ -1,0 +1,108 @@
+// Styles for all users pages
+
+// User SHOW
+.user-profile {
+
+  // Card styles
+  .card {
+    background-color: $white;
+    border-radius: 4px;
+
+    &.wrapper {
+      padding: 15px;
+    }
+  }
+
+  .card-image img {
+    border-radius: 4px 4px 0 0;
+    width: 100%;
+  }
+
+  .card-details-wrapper {
+    padding: 15px;
+
+    .card-title {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .card-subtitle {
+      color: $body-font-color-light;
+    }
+
+    .card-copy {
+      letter-spacing: 1px;
+    }
+
+    .btn {
+      margin-bottom: 10px;
+    }
+  }
+
+  .card-actions {
+    text-align: center;
+  }
+
+  // Summary section
+  .summary-section {
+    padding: 15px;
+    text-align: center;
+
+    .summary-title {
+      color: $body-font-color-light;
+      font-weight: 300;
+      margin-bottom: 3px;
+      text-transform: uppercase;
+    }
+  }
+
+  // Movie wrapper
+  .movie-wrapper {
+    .movie-wrapper-head {
+      background-color: $dark-gray;
+      border-radius: $border-radius-top;
+      padding: 20px;
+
+      .movie-title {
+        font-size: 22px;
+        margin-bottom: 0;
+
+        a {
+          color: $white;
+        }
+      }
+    }
+
+    .movie-wrapper-body {
+      background-color: $light-gray;
+      padding: 20px;
+
+      .movie-description {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .movie-wrapper-footer {
+      border-top: 1px solid $medium-gray;
+      padding: 20px;
+    }
+
+    .star-rating {
+      float: left;
+    }
+
+    .review-count {
+      margin-left: 15px;
+      position: relative;
+      top: 1px;
+
+      .digit {
+        color: $primary-color;
+        font-weight: bold;
+      }
+    }
+
+  }
+}

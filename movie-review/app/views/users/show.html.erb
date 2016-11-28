@@ -1,6 +1,90 @@
-<h1><%= @user.username %></h1>
-<%= image_tag @user.profile_image.url(:medium) %>
+<div class="row user-profile">
 
-<% if @user.id === current_user.id %>
-<%= link_to "Edit Account", edit_user_registration_path %>
-<% end %>
+  <!-- LEFT_COLUMN -->
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag @user.profile_image.url(:medium) %>
+      </div>
+      <div class="card-details-wrapper">
+        <h1 class="card-title"><%= @user.username %></h1>
+        <p class="card-subtitle">Tokyo, Japan</p>
+        <p class="card-copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non sit, eligendi. Perspiciatis eius alias omnis.</p>
+        <a href="#" class="btn btn-primary btn-full">Follow</a>
+        <% if @user.id === current_user.id %>
+        <div class="card-actions">
+          <%= link_to "Edit Account", edit_user_registration_path %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT_COLUMN -->
+  <div class="col-sm-12 col-md-9">
+
+    <!-- SUMMARY-SECTION -->
+    <div class="row card summary-section">
+      <div class="col-md-3">
+        <p class="summary-title">Movies</p>
+        <b class="summary-bold"><%= @movies.count %></b>
+      </div>
+
+      <div class="col-md-3">
+        <p class="summary-title">Reviews</p>
+        <b class="summary-bold"><%= @reviews.count %></b>
+      </div>
+
+      <div class="col-md-3">
+        <p class="summary-title">Joined</p>
+        <b class="summary-bold"><%= time_ago_in_words(@user.created_at) %> ago</b>
+      </div>
+
+      <div class="col-md-3">
+        <p class="summary-title">Reviews</p>
+        <b class="summary-bold"><%= @movies.count %></b>
+      </div>
+    </div>
+    <br>
+    <% @movies.each do |movie| %>
+      <div class="row card movie-wrapper">
+        <div class="movie-wrapper-head">
+          <h2 class="movie-title"><%= link_to movie.title, movie %></h2>
+        </div>
+        <div class="movie-wrapper-body">
+          <p class="movie-description"><%= movie.description %></p>
+        </div>
+        <div class="movie-wrapper-footer clearfix">
+          <div class="left">
+          <% @movieReviews = Review.where(movie_id: movie.id)
+                        if @movieReviews.blank?
+                           @avg_review = 0
+                        else
+                          @avg_review = @movieReviews.average(:rating).round(2)
+                        end
+          %>
+            <div class="star-rating" data-score= <%= @avg_review %> ></div><span class="review-count"><span class="digit"><%= @movieReviews.count%></span> reviews</span>
+          </div>
+          <div class="right">
+            <% if movie.user_id == current_user.id %>
+              <%= link_to 'Edit', edit_movie_path(movie) %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <br>
+    <% end %>
+
+  </div>
+
+</div>
+
+<script>
+  $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+        return $(this).attr('data-score');
+    }
+  });
+</script>

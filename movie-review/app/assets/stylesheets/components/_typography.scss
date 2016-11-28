@@ -1,0 +1,7 @@
+// Typography styles
+
+h1, h2, h3, h4, h5, h6, p {
+  color: $body-font-color;
+  margin-top: 0;
+  font-family: $global-font-family-sans-serif;
+}

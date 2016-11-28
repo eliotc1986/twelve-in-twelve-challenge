@@ -1,0 +1,23 @@
+// Variable definitions
+
+// COLORS
+$primary-color: #f47212;
+$secondary-color: #000;
+
+$white: #fefefe;
+$black: #3e3e3b;
+
+$light-gray: #fcfcfb;
+$medium-gray: #ebebe9;
+$dark-gray: #595959;
+
+$body-font-color: $black;
+$body-font-color-light: #cbcbc9;
+
+// GLOBALS
+$global-radius: 4px;
+$global-font-family-sans-serif: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// BORDER RADIUS
+$border-radius-top: $global-radius $global-radius 0 0;
+$border-radius-bottom: 0 0 $global-radius $global-radius;

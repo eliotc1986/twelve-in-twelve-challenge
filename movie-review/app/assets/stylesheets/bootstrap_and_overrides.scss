@@ -2,5 +2,11 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+// Vendor
+@import 'vendor/normalize';
+
+
 // Custom styles
+@import 'utilities/all';
 @import 'components/all';
+@import 'pages/all';
